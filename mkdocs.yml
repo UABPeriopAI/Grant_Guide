@@ -1,0 +1,16 @@
+# mkdocs.yml
+site_name: Grant Guide
+site_url: https://sites.uab.edu/periop-datascience/
+repo_url: https://github.com/UABPeriopAI/Grant_Guide.git
+nav:
+  - Home: index.md
+  - workflows:
+    - main: Grant_Guide/main.md
+  - Grant_Guide:
+    - data: Grant_Guide/data.md
+    - generate: Grant_Guide/generate.md
+theme: readthedocs
+plugins:
+  - mkdocstrings
+watch:
+  - .  # reload docs for any file changes

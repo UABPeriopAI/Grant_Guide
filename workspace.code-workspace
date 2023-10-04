@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/data"
+		}
+	],
+	"settings": {
+		"git.autofetch": "all",
+		"docwriter.style": "Google",
+		"[python]": {
+			"editor.detectIndentation" : false,
+			"editor.insertSpaces": true,
+			"editor.tabSize": 4   
+		}
+	}
+}

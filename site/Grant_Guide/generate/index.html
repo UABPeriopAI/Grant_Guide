@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sites.uab.edu/periop-datascience/Grant_Guide/generate/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>generate - Grant Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "generate";
+        var mkdocs_page_input_path = "Grant_Guide/generate.md";
+        var mkdocs_page_url = "/periop-datascience/Grant_Guide/generate/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Grant Guide
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">workflows</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../main/">main</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Grant_Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../data/">data</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">generate</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Grant Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Grant_Guide &raquo;</li>
+      <li>generate</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/UABPeriopAI/Grant_Guide.git/edit/master/docs/Grant_Guide/generate.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+<a id="Grant_Guide.generate"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Grant_Guide.generate.get_aims_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_aims_response</span><span class="p">(</span><span class="n">aims</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="s1">&#39;&gt;, model_name=&#39;</span><span class="n">gpt</span><span class="o">-</span><span class="mi">4</span><span class="s1">&#39;, openai_api_key=&#39;</span><span class="n">sk</span><span class="o">-</span><span class="n">aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr</span><span class="s1">&#39;, openai_api_base=&#39;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mockgpt</span><span class="o">.</span><span class="n">wiremockapi</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">v1</span><span class="s1">&#39;, openai_organization=&#39;&#39;, openai_proxy=&#39;&#39;), chat_prompt=ChatPromptTemplate(input_variables=[&#39;</span><span class="n">query</span><span class="s1">&#39;], messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], template=&#39;</span><span class="n">You</span> <span class="n">are</span> <span class="n">an</span> <span class="n">expert</span> <span class="n">clinical</span> <span class="n">researcher</span> <span class="n">who</span> <span class="n">has</span> <span class="n">received</span> <span class="n">continuous</span> <span class="n">NIH</span> <span class="p">(</span><span class="n">National</span> <span class="n">Institutes</span> <span class="n">of</span> <span class="n">Health</span><span class="p">)</span> <span class="n">funding</span> <span class="n">throughout</span> <span class="n">their</span> <span class="n">career</span><span class="o">.</span> <span class="n">You</span> <span class="n">are</span> <span class="n">preparing</span> <span class="n">a</span> <span class="n">funding</span> <span class="n">application</span> <span class="k">for</span> <span class="n">the</span> <span class="n">NIH</span> <span class="n">on</span> <span class="n">your</span> <span class="nb">next</span> <span class="n">research</span> <span class="n">idea</span><span class="o">.</span><span class="s1">&#39;)), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=[&#39;</span><span class="n">query</span><span class="s1">&#39;], template=&quot;The specific aims of your next project you want to get funded are</span><span class="se">\n\n</span><span class="si">{query}</span><span class="se">\n\n</span><span class="s1">Prepare the specific aims page for your grant application. Below is a guide you wrote explaining what should be in each paragraph.</span><span class="se">\n\n</span><span class="s1">The Specific Aims segment is paramount in NIH grant applications. It&#39;</span><span class="n">s</span> <span class="n">where</span> <span class="n">you</span> <span class="n">must</span> <span class="n">win</span> <span class="n">over</span> <span class="n">reviewers</span><span class="p">,</span> <span class="n">stressing</span> <span class="n">your</span> <span class="n">project</span><span class="s1">&#39;s importance and establishing your team&#39;</span><span class="n">s</span> <span class="n">credibility</span><span class="o">.</span> <span class="n">It</span> <span class="n">essentially</span> <span class="n">acts</span> <span class="k">as</span> <span class="n">a</span> <span class="n">snapshot</span> <span class="n">of</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">grant</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">nIntroduction</span>\<span class="n">n</span>\<span class="n">nThe</span> <span class="n">opening</span> <span class="n">paragraph</span> <span class="n">should</span> <span class="n">immediately</span> <span class="n">grasp</span> <span class="n">the</span> <span class="n">reviewers</span><span class="s1">&#39; interest by:</span><span class="se">\n\n</span><span class="s1">Opening Statement: Briefly lay out your research&#39;</span><span class="n">s</span> <span class="n">importance</span><span class="o">.</span>\<span class="n">nExisting</span> <span class="n">Knowledge</span><span class="p">:</span> <span class="n">Succinctly</span> <span class="n">summarize</span> <span class="n">the</span> <span class="n">current</span> <span class="n">knowledge</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">area</span><span class="o">.</span>\<span class="n">nKnowledge</span> <span class="n">Gap</span><span class="p">:</span> <span class="n">Clearly</span> <span class="n">define</span> <span class="n">the</span> <span class="n">missing</span> <span class="n">information</span> <span class="ow">and</span> <span class="n">how</span> <span class="n">your</span> <span class="n">research</span> <span class="n">aims</span> <span class="n">to</span> <span class="n">bridge</span> <span class="n">it</span><span class="o">.</span> <span class="n">Use</span> <span class="n">typographic</span> <span class="n">emphasis</span> <span class="n">sparingly</span><span class="o">.</span>\<span class="n">nCritical</span> <span class="n">Need</span><span class="p">:</span> <span class="n">Highlight</span> <span class="n">the</span> <span class="n">urgency</span> <span class="n">of</span> <span class="n">the</span> <span class="n">issue</span> <span class="n">you</span><span class="s1">&#39;re addressing and how your research proposes an evolutionary step in the domain.</span><span class="se">\n</span><span class="s1">Example: Viruses contribute to a significant proportion of human cancers. One such virus, HTLV-1, leads to adult T cell leukemia/lymphoma (ATLL). Its oncoprotein, Tax, affects key cellular processes but its transformation mechanism remains unclear. Our research intends to address this knowledge gap.</span><span class="se">\n\n</span><span class="s1">Second Paragraph: The Solution</span><span class="se">\n\n</span><span class="s1">Here, explain your answer to the knowledge gap:</span><span class="se">\n\n</span><span class="s1">Long-Term Goal: Highlight your overarching vision, ensuring it aligns with the funding body&#39;</span><span class="n">s</span> <span class="n">mission</span><span class="o">.</span>\<span class="n">nRationale</span><span class="p">:</span> <span class="n">Describe</span> <span class="n">the</span> <span class="n">foundation</span> <span class="k">for</span> <span class="n">your</span> <span class="n">main</span> <span class="n">hypothesis</span><span class="o">.</span>\<span class="n">nQualifications</span><span class="p">:</span> <span class="n">Succinctly</span> <span class="n">establish</span> <span class="n">why</span> <span class="n">your</span> <span class="n">team</span> <span class="ow">and</span> <span class="n">approach</span> <span class="n">are</span> <span class="n">best</span> <span class="n">suited</span><span class="o">.</span>\<span class="n">nHypothesis</span> <span class="o">&amp;</span> <span class="n">Objectives</span><span class="p">:</span> <span class="n">Clearly</span> <span class="n">outline</span> <span class="n">your</span> <span class="n">testable</span> <span class="n">hypothesis</span> <span class="ow">and</span> <span class="n">project</span><span class="s1">&#39;s primary objectives.</span><span class="se">\n</span><span class="s1">Example: Our solution involves developing a novel mouse model system for studying Tax&#39;</span><span class="n">s</span> <span class="n">role</span> <span class="ow">in</span> <span class="n">tumorigenesis</span><span class="o">.</span> <span class="n">This</span> <span class="n">aligns</span> <span class="k">with</span> <span class="n">findings</span> <span class="kn">from</span> <span class="nn">Lck</span><span class="o">-</span><span class="n">Tax</span> <span class="n">transgenic</span> <span class="n">mice</span><span class="o">.</span> <span class="n">Our</span> <span class="n">improved</span> <span class="n">approach</span> <span class="n">promises</span> <span class="n">consistent</span> <span class="n">wild</span><span class="o">-</span><span class="nb">type</span> <span class="ow">and</span> <span class="n">mutant</span> <span class="n">Tax</span> <span class="n">protein</span> <span class="n">expression</span> <span class="n">levels</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">nAims</span>\<span class="n">n</span>\<span class="n">nDetail</span> <span class="n">each</span> <span class="n">goal</span> <span class="n">that</span> <span class="n">tests</span> <span class="n">your</span> <span class="n">hypothesis</span><span class="p">:</span>\<span class="n">n</span>\<span class="n">nTitle</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">a</span> <span class="n">clear</span><span class="p">,</span> <span class="n">active</span> <span class="n">title</span> <span class="k">for</span> <span class="n">each</span> <span class="n">aim</span><span class="o">.</span>\<span class="n">nSummary</span><span class="p">:</span> <span class="n">Briefly</span> <span class="n">discuss</span> <span class="n">the</span> <span class="n">experimental</span> <span class="n">approach</span> <span class="ow">and</span> <span class="n">expected</span> <span class="n">outcomes</span><span class="o">.</span>\<span class="n">nOrganization</span><span class="p">:</span> <span class="n">Utilize</span> <span class="n">headings</span> <span class="ow">or</span> <span class="n">bullets</span> <span class="k">for</span> <span class="n">clarity</span><span class="o">.</span>\<span class="n">nExample</span><span class="p">:</span>\<span class="n">n</span>\<span class="n">nAim</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Develop</span> <span class="n">an</span> <span class="n">innovative</span> <span class="n">mouse</span> <span class="n">model</span> <span class="k">for</span> <span class="n">HTLV</span><span class="o">-</span><span class="mi">1</span> <span class="n">Tax</span> <span class="n">tumorigenesis</span><span class="o">.</span>\<span class="n">nAim</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Investigate</span> <span class="n">mutations</span> <span class="n">affecting</span> <span class="n">Tax</span> <span class="n">functions</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">implications</span> <span class="k">for</span> <span class="n">tumorigenesis</span><span class="o">.</span>\<span class="n">nConclusion</span>\<span class="n">n</span>\<span class="n">nClose</span> <span class="k">with</span> <span class="n">a</span> <span class="n">broad</span> <span class="n">perspective</span><span class="p">:</span>\<span class="n">n</span>\<span class="n">nInnovation</span><span class="p">:</span> <span class="n">State</span> <span class="n">the</span> <span class="n">uniqueness</span> <span class="n">of</span> <span class="n">your</span> <span class="n">project</span><span class="o">.</span>\<span class="n">nExpected</span> <span class="n">Outcomes</span><span class="p">:</span> <span class="n">Detail</span> <span class="n">anticipated</span> <span class="n">results</span><span class="o">.</span>\<span class="n">nImpact</span><span class="p">:</span> <span class="n">Emphasize</span> <span class="n">the</span> <span class="n">broader</span> <span class="n">implications</span> <span class="n">of</span> <span class="n">your</span> <span class="n">project</span><span class="s1">&#39;s success.</span><span class="se">\n</span><span class="s1">Example: Our research offers an upgraded mouse model that addresses the current shortcomings, enhancing understanding of HTLV-1 Tax tumorigenesis. This model can be a pivotal resource for future scientific endeavors, unlocking avenues hitherto inaccessible.</span><span class="se">\n\n</span><span class="s1">Format your response as markdown using body text only, limiting to one page with room for a small figure on that page. Avoid section headers. Otherwise, phrase and format your response to be copied into a grant proposal for the NIH.</span><span class="se">\n\n</span><span class="s1">&quot;))]))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>get_aims_response</code> takes an aims string as input and uses a chat function to generate
+a response based on the aims.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>aims</strong> (<code>str</code>) – A string representing the aims or goals for a grant application.</p></li>
+            <li><p><strong>chat</strong> – The <code>chat</code> parameter is a function that takes a chat prompt as input and returns a response.</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>It is used to simulate a conversation with a chatbot or virtual assistant.
+  chat_prompt: The <code>chat_prompt</code> parameter is a string that represents the prompt for the chatbot.
+It is used to provide context or instructions to the chatbot before asking a question or making a
+request. In this case, the <code>chat_prompt</code> is a formatted string that includes a placeholder <code>{query}</code>
+for</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>the response from the chatbot.</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>Grant_Guide/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_aims_response</span><span class="p">(</span>
+    <span class="n">aims</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">grant_helper_config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span> <span class="n">chat_prompt</span><span class="o">=</span><span class="n">grant_guide_prompts</span><span class="o">.</span><span class="n">aims_chat_prompt</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `get_aims_response` takes an aims string as input and uses a chat function to generate</span>
+<span class="sd">    a response based on the aims.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      aims (str): A string representing the aims or goals for a grant application.</span>
+<span class="sd">      chat: The `chat` parameter is a function that takes a chat prompt as input and returns a response.</span>
+<span class="sd">    It is used to simulate a conversation with a chatbot or virtual assistant.</span>
+<span class="sd">      chat_prompt: The `chat_prompt` parameter is a string that represents the prompt for the chatbot.</span>
+<span class="sd">    It is used to provide context or instructions to the chatbot before asking a question or making a</span>
+<span class="sd">    request. In this case, the `chat_prompt` is a formatted string that includes a placeholder `{query}`</span>
+<span class="sd">    for</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      the response from the chatbot.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">chat_prompt</span><span class="o">.</span><span class="n">format_prompt</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">aims</span><span class="p">)</span><span class="o">.</span><span class="n">to_messages</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Grant_Guide.generate.get_grant_guide_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_grant_guide_response</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="s1">&#39;&gt;, model_name=&#39;</span><span class="n">gpt</span><span class="o">-</span><span class="mi">4</span><span class="s1">&#39;, openai_api_key=&#39;</span><span class="n">sk</span><span class="o">-</span><span class="n">aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr</span><span class="s1">&#39;, openai_api_base=&#39;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mockgpt</span><span class="o">.</span><span class="n">wiremockapi</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">v1</span><span class="s1">&#39;, openai_organization=&#39;&#39;, openai_proxy=&#39;&#39;), chat_prompt=ChatPromptTemplate(input_variables=[&#39;</span><span class="n">context</span><span class="s1">&#39;, &#39;</span><span class="n">idea</span><span class="s1">&#39;], messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], template=&#39;</span><span class="n">Help</span> <span class="n">a</span> <span class="n">researcher</span> <span class="n">determine</span> <span class="k">if</span> <span class="n">their</span> <span class="n">grant</span> <span class="n">idea</span> <span class="ow">is</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">those</span> <span class="n">funded</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">fiscal</span> <span class="n">year</span> <span class="n">by</span> <span class="n">the</span> <span class="n">NIH</span><span class="o">.</span><span class="s1">&#39;)), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=[&#39;</span><span class="n">context</span><span class="s1">&#39;, &#39;</span><span class="n">idea</span><span class="s1">&#39;], template=&quot;Based on a semantic search, the following projects funded in the previous fiscal year match the researcher&#39;</span><span class="n">s</span> <span class="n">idea</span> <span class="n">most</span> <span class="n">closely</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">n</span><span class="p">{</span><span class="n">context</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">nResearcher</span><span class="s1">&#39;s idea: </span><span class="si">{idea}</span><span class="se">\n\n</span><span class="s1">Determine which funded projects, if any, are similar to the researcher&#39;</span><span class="n">s</span> <span class="n">idea</span><span class="o">.</span> <span class="n">Format</span> <span class="n">your</span> <span class="n">response</span> <span class="k">as</span> <span class="n">follows</span> <span class="ow">in</span> <span class="n">markdown</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">n</span><span class="c1">## Overall assessment of similarity to funed projects: \n&lt;narrative response&gt;\n\n## Similar projects\n- Title: &lt;title&gt;\n    - PI: &lt;PI&gt;\n    - Similarities: &lt;briefly describe similarities&gt;\n\n- Title: &lt;title&gt;\n    - PI: &lt;PI&gt;\n    - Similarities: &lt;briefly describe similarities&gt;\nand so on...\n&quot;))]))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>This function takes a query and a list of documents, prompts the user for a response using a
+chatbot, and returns the response.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>query</strong> (<code>str</code>) – The user's query or question that they want the model to respond to.</p></li>
+            <li><p><strong>docs</strong> – The <code>docs</code> parameter is a context or a list of documents that the model will use to generate</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>a response to the given query. It can be any relevant information that the model can use to
+understand the context of the query and provide a more accurate response.
+  chat: The chatbot model that will generate a response to the given query and context.
+  chat_prompt: <code>chat_prompt</code> is a string that contains a placeholder for the context and question.
+It is used to prompt the user for a response in a chatbot conversation. The <code>format_prompt</code> method
+replaces the placeholders with the actual context and question before sending the prompt to the
+user.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>The function <code>get_model_response</code> takes in a query and a list of documents, and uses a chatbot</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>      <p>model to generate a response to the query based on the context of the documents. The function
+returns the response generated by the chatbot model.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Grant_Guide/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_grant_guide_response</span><span class="p">(</span>
+    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">docs</span><span class="p">,</span>
+    <span class="n">chat</span><span class="o">=</span><span class="n">grant_helper_config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span>
+    <span class="n">chat_prompt</span><span class="o">=</span><span class="n">grant_guide_prompts</span><span class="o">.</span><span class="n">grant_guide_chat_prompt</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a query and a list of documents, prompts the user for a response using a</span>
+<span class="sd">    chatbot, and returns the response.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      query: The user&#39;s query or question that they want the model to respond to.</span>
+<span class="sd">      docs: The `docs` parameter is a context or a list of documents that the model will use to generate</span>
+<span class="sd">    a response to the given query. It can be any relevant information that the model can use to</span>
+<span class="sd">    understand the context of the query and provide a more accurate response.</span>
+<span class="sd">      chat: The chatbot model that will generate a response to the given query and context.</span>
+<span class="sd">      chat_prompt: `chat_prompt` is a string that contains a placeholder for the context and question.</span>
+<span class="sd">    It is used to prompt the user for a response in a chatbot conversation. The `format_prompt` method</span>
+<span class="sd">    replaces the placeholders with the actual context and question before sending the prompt to the</span>
+<span class="sd">    user.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The function `get_model_response` takes in a query and a list of documents, and uses a chatbot</span>
+<span class="sd">    model to generate a response to the query based on the context of the documents. The function</span>
+<span class="sd">    returns the response generated by the chatbot model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">chat_prompt</span><span class="o">.</span><span class="n">format_prompt</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">docs</span><span class="p">,</span> <span class="n">idea</span><span class="o">=</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_messages</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Grant_Guide.generate.get_strategy_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_strategy_response</span><span class="p">(</span><span class="n">bullet_points</span><span class="p">,</span> <span class="n">rs_part</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="s1">&#39;&gt;, model_name=&#39;</span><span class="n">gpt</span><span class="o">-</span><span class="mi">4</span><span class="s1">&#39;, openai_api_key=&#39;</span><span class="n">sk</span><span class="o">-</span><span class="n">aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr</span><span class="s1">&#39;, openai_api_base=&#39;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mockgpt</span><span class="o">.</span><span class="n">wiremockapi</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">v1</span><span class="s1">&#39;, openai_organization=&#39;&#39;, openai_proxy=&#39;&#39;), chat_prompt=ChatPromptTemplate(input_variables=[&#39;</span><span class="n">bullets</span><span class="s1">&#39;, &#39;</span><span class="n">part</span><span class="s1">&#39;, &#39;</span><span class="n">part_instructions</span><span class="s1">&#39;], messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], template=&#39;</span><span class="n">You</span> <span class="n">are</span> <span class="n">an</span> <span class="n">expert</span> <span class="n">clinical</span> <span class="n">researcher</span> <span class="n">who</span> <span class="n">has</span> <span class="n">received</span> <span class="n">continuous</span> <span class="n">NIH</span> <span class="p">(</span><span class="n">National</span> <span class="n">Institutes</span> <span class="n">of</span> <span class="n">Health</span><span class="p">)</span> <span class="n">funding</span> <span class="n">throughout</span> <span class="n">their</span> <span class="n">career</span><span class="o">.</span> <span class="n">You</span> <span class="n">are</span> <span class="n">preparing</span> <span class="n">a</span> <span class="n">funding</span> <span class="n">application</span> <span class="k">for</span> <span class="n">the</span> <span class="n">NIH</span> <span class="n">on</span> <span class="n">your</span> <span class="nb">next</span> <span class="n">research</span> <span class="n">idea</span><span class="o">.</span><span class="s1">&#39;)), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=[&#39;</span><span class="n">bullets</span><span class="s1">&#39;, &#39;</span><span class="n">part</span><span class="s1">&#39;, &#39;</span><span class="n">part_instructions</span><span class="s1">&#39;], template=&#39;</span><span class="n">Using</span> <span class="n">the</span> <span class="n">following</span> <span class="n">bullet</span> <span class="n">points</span><span class="p">,</span> <span class="n">prepare</span> <span class="n">the</span> <span class="p">{</span><span class="n">part</span><span class="p">}</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Research</span> <span class="n">Strategy</span> <span class="n">section</span> <span class="k">for</span> <span class="n">an</span> <span class="n">NIH</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">series</span> <span class="n">grant</span> <span class="ow">in</span> <span class="n">narrative</span><span class="p">,</span> <span class="n">paragraph</span> <span class="n">form</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">nBullet</span> <span class="n">points</span><span class="p">:</span>\<span class="n">n</span>\<span class="n">n</span><span class="p">{</span><span class="n">bullets</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">nBe</span> <span class="n">sure</span> <span class="n">to</span> <span class="n">address</span> <span class="n">the</span> <span class="n">following</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">n</span><span class="p">{</span><span class="n">part_instructions</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">nRespond</span> <span class="ow">in</span> <span class="n">markdown</span> <span class="nb">format</span> <span class="k">with</span> <span class="n">narrative</span> <span class="n">paragraphs</span><span class="o">.</span> <span class="n">Greatly</span> <span class="n">expand</span> <span class="n">on</span> <span class="n">the</span> <span class="n">bullet</span> <span class="n">points</span><span class="o">.</span>\<span class="n">n</span><span class="s1">&#39;))]))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>get_aims_response</code> takes an aims string as input and uses a chat function to generate
+a response based on the aims.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>aims</strong> (<code>str</code>) – A string representing the aims or goals for a grant application.</p></li>
+            <li><p><strong>chat</strong> – The <code>chat</code> parameter is a function that takes a chat prompt as input and returns a response.</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>It is used to simulate a conversation with a chatbot or virtual assistant.
+  chat_prompt: The <code>chat_prompt</code> parameter is a string that represents the prompt for the chatbot.
+It is used to provide context or instructions to the chatbot before asking a question or making a
+request. In this case, the <code>chat_prompt</code> is a formatted string that includes a placeholder <code>{query}</code>
+for</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>the response from the chatbot.</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>Grant_Guide/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_strategy_response</span><span class="p">(</span>
+    <span class="n">bullet_points</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">rs_part</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">instructions</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">chat</span><span class="o">=</span><span class="n">grant_helper_config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span>
+    <span class="n">chat_prompt</span><span class="o">=</span><span class="n">grant_guide_prompts</span><span class="o">.</span><span class="n">strategy_chat_prompt</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `get_aims_response` takes an aims string as input and uses a chat function to generate</span>
+<span class="sd">    a response based on the aims.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      aims (str): A string representing the aims or goals for a grant application.</span>
+<span class="sd">      chat: The `chat` parameter is a function that takes a chat prompt as input and returns a response.</span>
+<span class="sd">    It is used to simulate a conversation with a chatbot or virtual assistant.</span>
+<span class="sd">      chat_prompt: The `chat_prompt` parameter is a string that represents the prompt for the chatbot.</span>
+<span class="sd">    It is used to provide context or instructions to the chatbot before asking a question or making a</span>
+<span class="sd">    request. In this case, the `chat_prompt` is a formatted string that includes a placeholder `{query}`</span>
+<span class="sd">    for</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      the response from the chatbot.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span>
+        <span class="n">chat_prompt</span><span class="o">.</span><span class="n">format_prompt</span><span class="p">(</span>
+            <span class="n">bullets</span><span class="o">=</span><span class="n">bullet_points</span><span class="p">,</span> <span class="n">part</span><span class="o">=</span><span class="n">rs_part</span><span class="p">,</span> <span class="n">part_instructions</span><span class="o">=</span><span class="n">instructions</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">to_messages</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Grant_Guide.generate.search_grant_guide_vectorstore" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">search_grant_guide_vectorstore</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">embeddings</span><span class="o">=</span><span class="n">OpenAIEmbeddings</span><span class="p">(</span><span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">embedding</span><span class="o">.</span><span class="n">Embedding</span><span class="s1">&#39;&gt;, model=&#39;</span><span class="n">text</span><span class="o">-</span><span class="n">embedding</span><span class="o">-</span><span class="n">ada</span><span class="o">-</span><span class="mi">002</span><span class="s1">&#39;, deployment=&#39;</span><span class="n">text</span><span class="o">-</span><span class="n">embedding</span><span class="o">-</span><span class="n">ada</span><span class="o">-</span><span class="mi">002</span><span class="s1">&#39;, openai_api_version=&#39;&#39;, openai_api_base=&#39;&#39;, openai_api_type=&#39;&#39;, openai_proxy=&#39;&#39;, embedding_ctx_length=8191, openai_api_key=&#39;</span><span class="n">youllneedtoupdatethiswithyourownkey</span><span class="s1">&#39;, openai_organization=&#39;&#39;, allowed_special=set(), disallowed_special=&#39;</span><span class="nb">all</span><span class="s1">&#39;, chunk_size=1000, max_retries=6, request_timeout=None, headers=None, tiktoken_model_name=None, show_progress_bar=False, model_kwargs=</span><span class="si">{}</span><span class="s1">, skip_empty=False), store=PosixPath(&#39;</span><span class="o">/</span><span class="n">workspaces</span><span class="o">/</span><span class="n">grant_guide</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">grant_guide</span><span class="o">-</span><span class="n">faiss</span><span class="s1">&#39;))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>This function searches for relevant documents in a vectorstore using a query.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>query</strong> (<code>str</code>) – The search query that you want to use to retrieve relevant documents from the vectorstore.</p></li>
+            <li><p><strong>embeddings</strong> – The embeddings parameter is a variable that contains the path to the file that stores</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>the pre-trained word embeddings. These embeddings are used to represent words as vectors in a
+high-dimensional space.
+  store: The <code>store</code> parameter is a path to the directory where the vector store is saved. This
+vector store contains pre-computed embeddings for a set of documents.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>a list of relevant documents based on the input query, using a vectorstore and embeddings</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>      <p>specified in the configuration.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Grant_Guide/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">search_grant_guide_vectorstore</span><span class="p">(</span>
+    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">embeddings</span><span class="o">=</span><span class="n">grant_helper_config</span><span class="o">.</span><span class="n">EMBEDDINGS</span><span class="p">,</span>
+    <span class="n">store</span><span class="o">=</span><span class="n">grant_helper_config</span><span class="o">.</span><span class="n">GRANT_VECTORSTORE</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function searches for relevant documents in a vectorstore using a query.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      query: The search query that you want to use to retrieve relevant documents from the vectorstore.</span>
+<span class="sd">      embeddings: The embeddings parameter is a variable that contains the path to the file that stores</span>
+<span class="sd">    the pre-trained word embeddings. These embeddings are used to represent words as vectors in a</span>
+<span class="sd">    high-dimensional space.</span>
+<span class="sd">      store: The `store` parameter is a path to the directory where the vector store is saved. This</span>
+<span class="sd">    vector store contains pre-computed embeddings for a set of documents.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      a list of relevant documents based on the input query, using a vectorstore and embeddings</span>
+<span class="sd">    specified in the configuration.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Load vectorstore</span>
+    <span class="n">vectordb</span> <span class="o">=</span> <span class="n">FAISS</span><span class="o">.</span><span class="n">load_local</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">docsearch</span> <span class="o">=</span> <span class="n">vectordb</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">()</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">docsearch</span><span class="o">.</span><span class="n">get_relevant_documents</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">docs</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../data/" class="btn btn-neutral float-left" title="data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/UABPeriopAI/Grant_Guide.git" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../data/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
