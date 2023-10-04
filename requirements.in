@@ -1,0 +1,8 @@
+streamlit
+typer==0.6.1
+llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
+openai
+langchain
+tiktoken
+faiss-cpu
+pypandoc
