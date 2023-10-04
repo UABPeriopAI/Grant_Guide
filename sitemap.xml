@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://sites.uab.edu/periop-datascience/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sites.uab.edu/periop-datascience/Grant_Guide/data/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sites.uab.edu/periop-datascience/Grant_Guide/generate/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sites.uab.edu/periop-datascience/Grant_Guide/main/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
