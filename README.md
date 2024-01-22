@@ -14,117 +14,13 @@ This repository contains a generative AI grant drafting tool that assists users 
 The application was built and tested in a Windwos Subsystem for Linux 2 (WSL2) environment.  The software should work in either a WSL2 or Linux environment. If you are using a Linux environment, skip the installation steps for WSL2 (the next 2 subsections.)
 
 ### Install WSL2 on Windwos
- 1. Inside Windows Features, make sure "Virtual Machine Platform" and "Hyper-V" are enabled.
- 2. Restart
- 3. In an elevated powershell prompt, run wsl --install
- 4. Restart again
- 5. Back in an elevated powershell prompt, confirm WSL and Ubuntu installation with wsl -l -v. You should see Ubuntu listed with version 2.
- 6. If not, run wsl --set-default-version 2 followed by wsl --update
-
-*Note-* You may need to launch Ubuntu from the start menu between steps 3 and 4 to get WSL to see the installation (which happens by default with step 2).
-If Ubuntu does not automatically install, it can also be installed from the Windows Store (preferably the most recent LTS version).
+  Follow the instructions for [installing WSL2 on the MLOps Template wiki](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Setting-up-WSL2)
 
 ### Install Git inside WSL2
-To prevent constantly entering git credentials, you should install the latest 64-bit version of git for Windows:
-https://github.com/git-for-windows/git/releases 
-Default options are fine. Though, there may be edge cases where choosing the non-default option of having windows manage certificates will be less of a headache because UAB HSIS issues custom certificates.
-
-Git should already be installed in WSL Ubuntu (by default). If not, you can install it with
-```
-sudo apt-get install git
-```
-You will want to use the Windows git credential manager even in WSL so that you do not have to repeatedly enter git credentials.
-
-Once you have confirmed installation of git on both Windows and Ubuntu, run
-```
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
-```
-You should also take this opportunity to run (and fill in)
-```
-git config --global user.name "Your Name"
-git config --global user.email "youremail@domain.com"
-```
-In each project with a containerized development environment, you will likely need to run these once without the --global flag.
-
-If you have strange errors with git in WSL, this troubleshooting post is helfpul:
-https://stackoverflow.com/questions/72472443/git-credential-manager-not-found-on-wsl2 
+Additionally, you may want to follow the [instructions for our recommended usage of git in WSL2](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Recommended-git-Usage-in-WSL2).
 
 ### Install Docker
-**Do the following inside (wsl) Ubuntu:**
-
-### Ensures not older packages are installed
-```
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-
-#### Ensure pre-requisites are installed
-```
- sudo apt-get update
- sudo apt-get install ca-certificates curl gnupg
-```
-
-#### Adds docker apt key
-```
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-```
-
-#### Adds docker apt repository
-```
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-#### Refreshes apt repos
-```
-sudo apt-get update
-```
-
-#### Installs Docker CE
-```
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-#### Ensures docker group exists
-```
-sudo groupadd docker
-```
-
-#### Ensures you are part of it
-```
-sudo usermod -aG docker $USER
-```
-
-Now, close your shell and open another for taking the group changes into account
-
-#### Systemd
-Make sure your `/etc/wsl.conf` in Ubuntu contains
-```
-[boot]
-systemd=true
-```
-Then, restart WSL by opening powershell and running `wsl --shutdown`, waiting 8 seconds, then opening another Ubuntu shell.
-
-# Confirm Installation
-First, run
-```
-docker version
-```
-You should get *no* permissions errors if things went well.
-
-You can then try
-```
-docker run hello-world
-```
-
-#### References and more information:
-https://docs.docker.com/engine/install/ubuntu/ (seems to be updated)
-
-https://dev.to/felipecrs/simply-run-docker-on-wsl2-3o8 (not being updated, but original way we setup docker-cd in Ubuntu)
-
+Follow the instructions for [installing Docker on the MLOps Template repository Wiki](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Setting-up-Docker).
 
 ## Getting Started
 
