@@ -20,7 +20,10 @@ The application was built and tested in a Windwos Subsystem for Linux 2 (WSL2) e
 Additionally, you may want to follow the [instructions for our recommended usage of git in WSL2](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Recommended-git-Usage-in-WSL2).
 
 ### Install Docker
-Follow the instructions for [installing Docker on the MLOps Template repository Wiki](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Setting-up-Docker).
+Follow the instructions for [installing Docker from the MLOps Template repository Wiki](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Setting-up-Docker).
+
+### Install VSCode
+Follow the instructions for [installing VSCode from the MLOps Template repository Wiki](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Installing-VSCode)
 
 ## Getting Started
 
