@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 4. Link a data drive in the ```.devcontainer/devcontainer.json``` file
 
-5. Connect you LLM endpoint and setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.  
+5. Connect your LLM endpoint and setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
 
 ## Running the application 
 ### Directly from source code
