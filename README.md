@@ -10,9 +10,26 @@ This repository contains a generative AI grant drafting tool that assists users 
 
 3. **Sub-Section Drafting Tool**: Writing various sections of a grant application can be time-consuming and challenging. This tool provides a streamlined approach to drafting key sections such as significance, innovation, approach, rigor, and preliminary data. Users can input their ideas, and the generative AI assists in generating well-structured drafts that adhere to NIH guidelines and best practices.
 
-## Getting Started
+*Note - * This tool is not designed to provide final drafts of grant proposal or allow researchers to not validate their research idea and study design. Drafts submitted directly from this tool without thorough revision will have a near zero chance of being funded.
 
-To use this generative AI grant drafting tool, follow these steps:
+## Getting Started
+## Setting up the Environment
+The application was built and tested in a Windwos Subsystem for Linux 2 (WSL2) environment.  The software should work in either a WSL2 or Linux environment. If you are using a Linux environment, skip the installation steps for WSL2.  While it is possible to get this tool to work without all these steps, we highly encourage users to install WSL2, Docker, and VSCode for the optimal experience using this software.
+
+### Install WSL2 on Windwos
+  Follow the instructions for [installing WSL2](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Setting-up-WSL2).
+
+### Install Git inside WSL2
+Additionally, you may want to follow the [instructions for our recommended usage of git in WSL2](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Recommended-git-Usage-in-WSL2).
+
+### Install Docker
+Follow the instructions for [installing Docker](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Setting-up-Docker) from the MLOps Template repository Wiki.
+
+### Install VSCode
+Follow the instructions for [installing VSCode](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Installing-VSCode) from the MLOps Template repository Wiki.
+
+### Obtain the software
+Once the environment is setup, follow these steps to access this generative AI grant drafting tool:
 
 1. Clone the repository:
 
@@ -26,6 +43,10 @@ pip install -r requirements.txt
 ```
 
 3. Run the tool by executing the appropriate scripts for each of the three features. See the documentation within each directory for detailed instructions.
+
+4. Link a data drive in the ```.devcontainer/devcontainer.json``` file
+
+5. Connect you LLM endpoint and setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.  
 
 ## Running the application 
 ### Directly from source code
