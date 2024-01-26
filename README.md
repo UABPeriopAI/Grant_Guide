@@ -10,7 +10,7 @@ This repository contains a generative AI grant drafting tool that assists users 
 
 3. **Sub-Section Drafting Tool**: Writing various sections of a grant application can be time-consuming and challenging. This tool provides a streamlined approach to drafting key sections such as significance, innovation, approach, rigor, and preliminary data. Users can input their ideas, and the generative AI assists in generating well-structured drafts that adhere to NIH guidelines and best practices.
 
-*Note - * This tool is not designed to provide final drafts of grant proposal or allow researchers to not validate their research idea and study design. Drafts submitted directly from this tool without thorough revision will have a near zero chance of being funded.
+*Note* -  This tool is not designed to provide final drafts of grant proposal or allow researchers to not validate their research idea and study design. Drafts submitted directly from this tool without thorough revision will have a near zero chance of being funded.
 
 ## Getting Started
 ## Setting up the Environment
