@@ -53,14 +53,14 @@ code .
 
 7. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
    The secrets has supportive code to properly handle sensitive information like passwords and access keys. The fields our tool uses and that will need to be populated for the tool to work with minimal modification include:
-   ```
-  db_server = ""
-  db_name = ""
-  db_user = ""
-  db_password = ""
-  openai_api_key = ""
-  gpt4_api_key = ""
-   ```
+```
+db_server = ""
+db_name = ""
+db_user = ""
+db_password = ""
+openai_api_key = ""
+gpt4_api_key = ""
+```
 
 ## Running the application 
 ### Directly from source code
