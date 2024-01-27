@@ -28,7 +28,7 @@ Follow the instructions for [installing Docker](https://github.com/UABPeriopAI/M
 ### Install VSCode
 Follow the instructions for [installing VSCode](https://github.com/UABPeriopAI/MLOpsTemplate/wiki/Installing-VSCode) from the MLOps Template repository Wiki.
 
-### Obtain the software
+### Obtain and Deploy the software
 Once the environment is setup, follow these steps to access this generative AI grant drafting tool:
 
 1. Clone the repository:
@@ -37,16 +37,30 @@ Once the environment is setup, follow these steps to access this generative AI g
 git clone https://github.com/UABPeriopAI/Grant_Guide.git
 ```
 
-2. Install the necessary dependencies. Make sure you have Python 3 installed.
+2. Navigate to the directory and open VSCode with
 ```
-pip install -r requirements.txt
+code .
 ```
+
+3. Make sure that the dev container extension is installed in VSCode by going to the Extensions Tab (left-most portion of the user interface
 
 3. Run the tool by executing the appropriate scripts for each of the three features. See the documentation within each directory for detailed instructions.
 
 4. Link a data drive in the ```.devcontainer/devcontainer.json``` file
 
-5. Connect your LLM endpoint and setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
+5. Connect your LLM endpoint 
+  + The LLM enpoint configuration can be found in Grant_Guide/Grant_Guide_config/config.py and the variables that require updating include the EMBEDDINGS and CHAT.
+
+7. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
+   The secrets has supportive code to properly handle sensitive information like passwords and access keys. The fields our tool uses and that will need to be populated for the tool to work with minimal modification include:
+   ```
+  db_server = ""
+  db_name = ""
+  db_user = ""
+  db_password = ""
+  openai_api_key = ""
+  gpt4_api_key = ""
+   ```
 
 ## Running the application 
 ### Directly from source code
