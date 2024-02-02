@@ -73,7 +73,7 @@ In this case, use `.streamlit/secrets.toml` for secrets
 
 #### TODO
 - [ ] specify a data folder location in `.devcontainer/devcontainer.json`
-
+- [ ] add LLM end-point (e.g., ChatGPT API), including necessary API Key (config.py)
 
 ## Contributing
 
