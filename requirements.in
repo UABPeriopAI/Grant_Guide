@@ -1,6 +1,6 @@
 streamlit
 typer==0.6.1
-llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
+llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@releases/tag/v0.1
 openai
 langchain
 tiktoken
