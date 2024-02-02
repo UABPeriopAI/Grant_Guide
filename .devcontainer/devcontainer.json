@@ -12,7 +12,7 @@
 			"NODE_VERSION": "none"
 		}
 	},
-	//TODO - Update source location for your project
+	//TODO - Update source location for your project and uncomment mounts
 	// "mounts": [
 	// 	"source=./data,target=/data,type=bind,consistency=cached"
 	//   ],
