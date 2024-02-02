@@ -12,10 +12,10 @@
 			"NODE_VERSION": "none"
 		}
 	},
-	//TODO - Update source location for your project
-	"mounts": [
-		"source=./data,target=/data,type=bind,consistency=cached"
-	  ],
+	//TODO - Update source location for your project and uncomment mounts
+	// "mounts": [
+	// 	"source=./data,target=/data,type=bind,consistency=cached"
+	//   ],
 
 
 	// Set *default* container specific settings.json values on container create.
