@@ -78,7 +78,7 @@ langchain==0.0.307
     # via -r requirements.in
 langsmith==0.0.41
     # via langchain
-llm-utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
+llm-utils @ git+https://github.com/UABPeriopAI/llm_utils.git@releases/tag/v0.1
     # via -r requirements.in
 markdown-it-py==3.0.0
     # via rich
