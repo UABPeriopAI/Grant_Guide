@@ -44,20 +44,17 @@ code .
 
 3. Make sure that the dev container extension is installed in VSCode by going to the Extensions Tab (left-most portion of the user interface
 
-3. Run the tool by executing the appropriate scripts for each of the three features. See the documentation within each directory for detailed instructions.
-
 4. Link a data drive in the ```.devcontainer/devcontainer.json``` file
+  + Uncomment lines 16-18 and change the source folder location to a existing WSL file path
+  ++ That is, change  "source=./data" to source=local/wsl/file/path
+  ++The default (./data will work as that file is containted in the repository, but it's better practice to store data in a location other than the code repository)
 
-5. Connect your LLM endpoint 
+6. Connect your LLM endpoint 
   + The LLM enpoint configuration can be found in Grant_Guide/Grant_Guide_config/config.py and the variables that require updating include the EMBEDDINGS and CHAT.
 
 7. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
    The secrets has supportive code to properly handle sensitive information like passwords and access keys. The fields our tool uses and that will need to be populated for the tool to work with minimal modification include:
 ```
-db_server = ""
-db_name = ""
-db_user = ""
-db_password = ""
 openai_api_key = ""
 gpt4_api_key = ""
 ```
