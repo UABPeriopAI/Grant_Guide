@@ -53,6 +53,8 @@ code .
    + in VS Code press f1 an type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
    + You may have to start the docker service with ```sudo service docker start```
 
+6. At this point you can run the application as described in the next section, "Running the Application"  However, to use the generative AI functionality, you will have to add your own LLM enpoint and setup a secrets file as describe in steps 7 and 8.  A bring your own key version will be available in the next release.
+
 7. Connect your LLM endpoint 
   + The LLM enpoint configuration can be found in Grant_Guide/Grant_Guide_config/config.py and the variables that require updating include the EMBEDDINGS and CHAT.
     ++ For example,
@@ -62,14 +64,14 @@ code .
     model="gpt-4",
     )```
 
-7. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
+8. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
    The secrets has supportive code to properly handle sensitive information like passwords and access keys. The fields our tool uses and that will need to be populated for the tool to work with minimal modification include:
 ```
 openai_api_key = ""
 gpt4_api_key = ""
 ```
 
-## Running the application 
+## Running the Application 
 ### Directly from source code
 Run the application with the following command:
 ```
