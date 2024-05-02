@@ -44,13 +44,23 @@ code .
 
 3. Make sure that the dev container extension is installed in VSCode by going to the Extensions Tab (left-most portion of the user interface
 
-4. Link a data drive in the ```.devcontainer/devcontainer.json``` file
-  + Uncomment lines 16-18 and change the source folder location to a existing WSL file path
+4. (optional) Link a data drive in the ```.devcontainer/devcontainer.json``` file
+  + Uncomment lines 16-18 in ```.devcontainer/devcontainer.json``` and change the source folder location to a existing WSL file path
   ++ That is, change  "source=./data" to source=local/wsl/file/path
   ++The default (./data will work as that file is containted in the repository, but it's better practice to store data in a location other than the code repository)
 
-6. Connect your LLM endpoint 
+5. Deploy the Docker container
+   + in VS Code press f1 an type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
+   + You may have to start the docker service with ```sudo service docker start```
+
+7. Connect your LLM endpoint 
   + The LLM enpoint configuration can be found in Grant_Guide/Grant_Guide_config/config.py and the variables that require updating include the EMBEDDINGS and CHAT.
+    ++ For example,
+    ```CHAT = ChatOpenAI(
+    openai_api_base="https://mockgpt.wiremockapi.cloud/v1",
+    openai_api_key="sk-aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr",
+    model="gpt-4",
+    )```
 
 7. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
    The secrets has supportive code to properly handle sensitive information like passwords and access keys. The fields our tool uses and that will need to be populated for the tool to work with minimal modification include:
