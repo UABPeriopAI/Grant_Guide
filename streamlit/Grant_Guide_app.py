@@ -11,9 +11,6 @@ import Grant_Guide_config.boilerplate as Grant_boilerplate
 import Grant_Guide_config.config as Grant_Guide_config
 import streamlit as st
 
-# TODO Capture tokens in and out
-
-
 def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
     # page metadata
     st.set_page_config(
@@ -67,9 +64,13 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
             with st.spinner("Thinking..."):
                 submit_time = datetime.datetime.now()
                 documents = grant_generate.search_grant_guide_vectorstore(
-                    query=aims, store=vectorstore
+                    query=aims, 
+                    embeddings=st.session_state.embedding_config,
+                    store=vectorstore
                 )
-                result = grant_generate.get_grant_guide_response(query=aims, docs=documents)
+                result = grant_generate.get_grant_guide_response(query=aims, 
+                                                                 docs=documents,
+                                                                 chat=st.session_state.chat_config)
                 response_time = datetime.datetime.now()
             st.markdown(result.content)
 
@@ -97,7 +98,7 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
                         "To comply with a Health System Information Security request, submissions are recorded for potential review."
                     )
             except Exception as e:
-                st.error("Something went wrong, if the problem persists contact the developers")
+                st.error("Something went wrong, you may have not yet setup a database for logging yet")
                 st.error(e)
 
     with tab2:
@@ -120,9 +121,10 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
         if st.button("Draft specific aims page"):
             with st.spinner("Drafting. This may take a few minutes..."):
                 submit_time = datetime.datetime.now()
-                aims_result = grant_generate.get_aims_response(aims)
+                aims_result = grant_generate.get_aims_response(aims, chat=st.session_state.chat_config)
                 response_time = datetime.datetime.now()
-                summary_result = grant_generate.get_summary_response(aims_result.content)
+                summary_result = grant_generate.get_summary_response(aims_result.content, 
+                                                                     chat=st.session_state.chat_config)
 
                 output_text = (
                     Grant_boilerplate.CONTRACT
@@ -198,6 +200,7 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
                     bullet_points=strategy_bullets,
                     rs_part=research_strategy_part,
                     instructions=Grant_Guide_config.prefilled_text[research_strategy_part],
+                    chat = st.session_state.chat_config
                 )
                 response_time = datetime.datetime.now()
 

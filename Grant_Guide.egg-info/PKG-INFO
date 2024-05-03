@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: Grant-Guide
+Name: Grant_Guide
 Version: 0.1
 Summary: Generative AI for grant writing
 Home-page: https://github.com/UABPeriopAI/Grant_Guide.git
@@ -7,91 +7,94 @@ Author: Ryan Melvin
 Author-email: rmelvin@uabmc.edu
 Requires-Python: >=3.10
 License-File: LICENSE
-Requires-Dist: aiohttp==3.8.5
+Requires-Dist: aiohttp==3.9.5
 Requires-Dist: aiosignal==1.3.1
-Requires-Dist: altair==5.1.2
-Requires-Dist: annotated-types==0.5.0
-Requires-Dist: anyio==3.7.1
+Requires-Dist: altair==5.3.0
+Requires-Dist: annotated-types==0.6.0
+Requires-Dist: anyio==4.3.0
 Requires-Dist: async-timeout==4.0.3
-Requires-Dist: attrs==23.1.0
-Requires-Dist: blinker==1.6.2
-Requires-Dist: cachetools==5.3.1
-Requires-Dist: certifi==2023.7.22
-Requires-Dist: charset-normalizer==3.3.0
+Requires-Dist: attrs==23.2.0
+Requires-Dist: blinker==1.8.1
+Requires-Dist: cachetools==5.3.3
+Requires-Dist: certifi==2024.2.2
+Requires-Dist: charset-normalizer==3.3.2
 Requires-Dist: click==8.1.7
-Requires-Dist: dataclasses-json==0.6.1
-Requires-Dist: exceptiongroup==1.1.3
-Requires-Dist: faiss-cpu==1.7.4
-Requires-Dist: frozenlist==1.4.0
-Requires-Dist: gitdb==4.0.10
-Requires-Dist: gitpython==3.1.37
-Requires-Dist: greenlet==3.0.0
-Requires-Dist: idna==3.4
-Requires-Dist: importlib-metadata==6.8.0
-Requires-Dist: jinja2==3.1.2
+Requires-Dist: dataclasses-json==0.6.5
+Requires-Dist: distro==1.9.0
+Requires-Dist: exceptiongroup==1.2.1
+Requires-Dist: faiss-cpu==1.8.0
+Requires-Dist: frozenlist==1.4.1
+Requires-Dist: gitdb==4.0.11
+Requires-Dist: gitpython==3.1.43
+Requires-Dist: greenlet==3.0.3
+Requires-Dist: h11==0.14.0
+Requires-Dist: httpcore==1.0.5
+Requires-Dist: httpx==0.27.0
+Requires-Dist: idna==3.7
+Requires-Dist: jinja2==3.1.3
 Requires-Dist: jsonpatch==1.33
 Requires-Dist: jsonpointer==2.4
-Requires-Dist: jsonschema==4.19.1
-Requires-Dist: jsonschema-specifications==2023.7.1
-Requires-Dist: langchain==0.0.307
-Requires-Dist: langsmith==0.0.41
+Requires-Dist: jsonschema==4.22.0
+Requires-Dist: jsonschema-specifications==2023.12.1
+Requires-Dist: langchain==0.1.17
+Requires-Dist: langchain-community==0.0.36
+Requires-Dist: langchain-core==0.1.49
+Requires-Dist: langchain-text-splitters==0.0.1
+Requires-Dist: langsmith==0.1.53
 Requires-Dist: llm-utils@ git+https://github.com/UABPeriopAI/llm_utils.git@main
 Requires-Dist: markdown-it-py==3.0.0
-Requires-Dist: markupsafe==2.1.3
-Requires-Dist: marshmallow==3.20.1
+Requires-Dist: markupsafe==2.1.5
+Requires-Dist: marshmallow==3.21.2
 Requires-Dist: mdurl==0.1.2
-Requires-Dist: multidict==6.0.4
+Requires-Dist: multidict==6.0.5
 Requires-Dist: mypy-extensions==1.0.0
-Requires-Dist: numpy==1.26.0
-Requires-Dist: openai==0.28.1
+Requires-Dist: numpy==1.26.4
+Requires-Dist: openai==1.25.1
+Requires-Dist: orjson==3.10.2
 Requires-Dist: packaging==23.2
-Requires-Dist: pandas==2.1.1
-Requires-Dist: pillow==9.5.0
-Requires-Dist: protobuf==4.24.3
-Requires-Dist: pyarrow==13.0.0
-Requires-Dist: pydantic==2.4.2
-Requires-Dist: pydantic-core==2.10.1
-Requires-Dist: pydeck==0.8.1b0
-Requires-Dist: pygments==2.16.1
-Requires-Dist: pympler==1.0.1
-Requires-Dist: pyodbc==4.0.39
-Requires-Dist: pypandoc==1.11
-Requires-Dist: python-dateutil==2.8.2
-Requires-Dist: pytz==2023.3.post1
-Requires-Dist: pytz-deprecation-shim==0.1.0.post0
+Requires-Dist: pandas==2.2.2
+Requires-Dist: pillow==10.3.0
+Requires-Dist: protobuf==4.25.3
+Requires-Dist: pyarrow==16.0.0
+Requires-Dist: pydantic==2.7.1
+Requires-Dist: pydantic-core==2.18.2
+Requires-Dist: pydeck==0.9.0
+Requires-Dist: pygments==2.17.2
+Requires-Dist: pyodbc==5.1.0
+Requires-Dist: pypandoc==1.13
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: pytz==2024.1
 Requires-Dist: pyyaml==6.0.1
-Requires-Dist: referencing==0.30.2
-Requires-Dist: regex==2023.10.3
+Requires-Dist: referencing==0.35.1
+Requires-Dist: regex==2024.4.28
 Requires-Dist: requests==2.31.0
-Requires-Dist: rich==13.6.0
-Requires-Dist: rpds-py==0.10.3
+Requires-Dist: rich==13.7.1
+Requires-Dist: rpds-py==0.18.0
 Requires-Dist: six==1.16.0
 Requires-Dist: smmap==5.0.1
-Requires-Dist: sniffio==1.3.0
-Requires-Dist: sqlalchemy==2.0.21
-Requires-Dist: streamlit==1.25.0
+Requires-Dist: sniffio==1.3.1
+Requires-Dist: sqlalchemy==2.0.29
+Requires-Dist: st-pages==0.4.5
+Requires-Dist: streamlit==1.34.0
 Requires-Dist: tenacity==8.2.3
-Requires-Dist: tiktoken==0.5.1
+Requires-Dist: tiktoken==0.6.0
 Requires-Dist: toml==0.10.2
-Requires-Dist: toolz==0.12.0
-Requires-Dist: tornado==6.3.3
-Requires-Dist: tqdm==4.66.1
+Requires-Dist: toolz==0.12.1
+Requires-Dist: tornado==6.4
+Requires-Dist: tqdm==4.66.3
 Requires-Dist: typer==0.6.1
-Requires-Dist: typing-extensions==4.8.0
+Requires-Dist: typing-extensions==4.11.0
 Requires-Dist: typing-inspect==0.9.0
-Requires-Dist: tzdata==2023.3
-Requires-Dist: tzlocal==4.3.1
-Requires-Dist: urllib3==2.0.6
-Requires-Dist: validators==0.22.0
-Requires-Dist: watchdog==3.0.0
-Requires-Dist: yarl==1.9.2
-Requires-Dist: zipp==3.17.0
+Requires-Dist: tzdata==2024.1
+Requires-Dist: urllib3==2.2.1
+Requires-Dist: watchdog==4.0.0
+Requires-Dist: yarl==1.9.4
 Provides-Extra: dev
-Requires-Dist: mkdocs==1.3.1; extra == "dev"
-Requires-Dist: mkdocstrings==0.18.1; extra == "dev"
-Requires-Dist: black==22.6.0; extra == "dev"
-Requires-Dist: flake8==5.0.2; extra == "dev"
-Requires-Dist: isort==5.10.1; extra == "dev"
+Requires-Dist: mkdocs; extra == "dev"
+Requires-Dist: mkdocstrings; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: isort; extra == "dev"
 Provides-Extra: docs
-Requires-Dist: mkdocs==1.3.1; extra == "docs"
-Requires-Dist: mkdocstrings==0.18.1; extra == "docs"
+Requires-Dist: mkdocs; extra == "docs"
+Requires-Dist: mkdocstrings; extra == "docs"

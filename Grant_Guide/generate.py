@@ -6,7 +6,7 @@ import Grant_Guide_config.config as grant_helper_config
 
 def search_grant_guide_vectorstore(
     query: str,
-    embeddings=grant_helper_config.EMBEDDINGS,
+    embeddings=None,
     store=grant_helper_config.GRANT_VECTORSTORE,
 ):
     """
@@ -34,7 +34,7 @@ def search_grant_guide_vectorstore(
 def get_grant_guide_response(
     query: str,
     docs,
-    chat=grant_helper_config.CHAT,
+    chat=None,
     chat_prompt=grant_guide_prompts.grant_guide_chat_prompt,
 ):
     """
@@ -62,7 +62,9 @@ def get_grant_guide_response(
 
 
 def get_aims_response(
-    aims: str, chat=grant_helper_config.CHAT, chat_prompt=grant_guide_prompts.aims_chat_prompt
+    aims: str, 
+    chat=None, 
+    chat_prompt=grant_guide_prompts.aims_chat_prompt
 ):
     """
     The function `get_aims_response` takes an aims string as input and uses a chat function to generate
@@ -88,7 +90,7 @@ def get_strategy_response(
     bullet_points: str,
     rs_part: str,
     instructions: str,
-    chat=grant_helper_config.CHAT,
+    chat=None,
     chat_prompt=grant_guide_prompts.strategy_chat_prompt,
 ):
     """
@@ -117,7 +119,7 @@ def get_strategy_response(
 
 def get_summary_response(
     aims_page: str,
-    chat=grant_helper_config.CHAT,
+    chat=None,
     chat_prompt=grant_guide_prompts.summary_chat_prompt,
 ):
 
