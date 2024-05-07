@@ -46,13 +46,13 @@ code .
 
 4. (optional) Link a data drive in the ```.devcontainer/devcontainer.json``` file
   ++ That is, change  "source=./data" to source=local/wsl/file/path
-  ++The default (./data will work as that file is containted in the repository, but it's better practice to store data in a location other than the code repository)
+  ++ The default (./data will work as that file is containted in the repository, but it's better practice to store data in a location other than the code repository)
 
 5. Deploy the Docker container
    + in VS Code press f1 and type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
    + You may have to start the docker service with ```sudo service docker start```
 
-6. Prior to running the streamlit application the user might want to create a VectorStore for their LLM to reference...
+6. Prior to running the streamlit application the user might want to create a VectorStore for their LLM to reference.  This can be done 
    
 7. At this point you can run the application as described in the next section, "Running the Application"  However, to use the generative AI functionality, you will have to add your own LLM enpoint and setup a secrets file as describe in steps 7 and 8.  A bring your own key version will be available in the next release.
 
