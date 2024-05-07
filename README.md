@@ -53,23 +53,14 @@ code .
    + in VS Code press f1 an type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
    + You may have to start the docker service with ```sudo service docker start```
 
-6. At this point you can run the application as described in the next section, "Running the Application"  However, to use the generative AI functionality, you will have to add your own LLM enpoint and setup a secrets file as describe in steps 7 and 8.  A bring your own key version will be available in the next release.
+6. Prior to running the streamlit application the user might want to create a VectorStore for their LLM to reference...
+   
+7. At this point you can run the application as described in the next section, "Running the Application"  However, to use the generative AI functionality, you will have to add your own LLM enpoint and setup a secrets file as describe in steps 7 and 8.  A bring your own key version will be available in the next release.
 
-7. Connect your LLM endpoint 
-  + The LLM enpoint configuration can be found in Grant_Guide/Grant_Guide_config/config.py and the variables that require updating include the EMBEDDINGS and CHAT.
-    ++ For example,
-    ```CHAT = ChatOpenAI(
-    openai_api_base="https://mockgpt.wiremockapi.cloud/v1",
-    openai_api_key="sk-aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr",
-    model="gpt-4",
-    )```
+8. Connect your LLM endpoint 
+  + Upon deploying the streamlit application, the application will prompt the user to add in their own OpenAI or Azure API Key.  Select the corresponding endpoint from the drop down menu (OpenAI or Azure) and paste the API in the field below.
+  + Note: More advanced changes can be made in the config file (Grant_Guide_config/config.py)
 
-8. Setup a sectrets.toml file in the streamlit folder (i.e., ```.streamlit/secrets.toml```.)
-   The secrets has supportive code to properly handle sensitive information like passwords and access keys. The fields our tool uses and that will need to be populated for the tool to work with minimal modification include:
-```
-openai_api_key = ""
-gpt4_api_key = ""
-```
 
 ## Running the Application 
 ### Directly from source code
