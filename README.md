@@ -45,12 +45,11 @@ code .
 3. Make sure that the dev container extension is installed in VSCode by going to the Extensions Tab (left-most portion of the user interface
 
 4. (optional) Link a data drive in the ```.devcontainer/devcontainer.json``` file
-  + Uncomment lines 16-18 in ```.devcontainer/devcontainer.json``` and change the source folder location to a existing WSL file path
   ++ That is, change  "source=./data" to source=local/wsl/file/path
   ++The default (./data will work as that file is containted in the repository, but it's better practice to store data in a location other than the code repository)
 
 5. Deploy the Docker container
-   + in VS Code press f1 an type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
+   + in VS Code press f1 and type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
    + You may have to start the docker service with ```sudo service docker start```
 
 6. Prior to running the streamlit application the user might want to create a VectorStore for their LLM to reference...
