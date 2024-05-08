@@ -23,41 +23,17 @@ def get_grant_csv():
 
 
 @app.command()
-def ingest_grant_csv():
+def ingest_grant_csv(
+    embedding_config = grant_helper_config.azure_embeddings
+):
     """
     The `ingest` function preprocesses data
     """
     grant_data.ingest_grant_csv(
         path=grant_helper_config.GRANT_CSV,
-        embeddings=grant_helper_config.EMBEDDINGS,
+        embeddings=embedding_config,
         out=grant_helper_config.GRANT_VECTORSTORE,
     )
-
-
-@app.command()
-def generate_grant_guide(
-    query: str,
-):
-    """
-    The function generates a response to a user query
-
-    Args:
-      query (str): The user's query or input text that will be used to generate a response.
-
-    """
-    docs = grant_generate.search_grant_guide_vectorstore(
-        query,
-        embeddings=grant_helper_config.EMBEDDINGS,
-        store=grant_helper_config.GRANT_VECTORSTORE,
-    )
-    result = grant_generate.get_grant_guide_response(
-        query,
-        docs,
-        chat=grant_helper_config.CHAT,
-        chat_prompt=grant_guide_prompts.grant_guide_chat_prompt,
-    )
-    return result.content
-
 
 if __name__ == "__main__":
     app()  # pragma: no cover, live app

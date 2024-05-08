@@ -13,7 +13,7 @@ To further refine this draft, we suggest you
 - [ ] add more details.
 - [ ] check all acronyms.
 - [ ] make general statements more specific to your project.
-- [ ] submit your draft to [iThenticate](https://www.uab.edu/ithenticate) to check for plagiarism.
+- [ ] submit your draft to a plagiarism detector to ensure originality.
 - [ ] carefully consider overstated (and understated) claims.
 - [ ] add references as appropriate (get help from literature tool if needed).
 - [ ] review and edit all sections.

@@ -29,7 +29,7 @@ def log_in():
 
     elif api_key_type == "OpenAI":
         key_handler = OpenaiKeyHandler(Grant_Guide_config.openai_chat_config, 
-                                        embedding_config = Grant_Guide_config.azure_embeddings)
+                                        embedding_config = Grant_Guide_config.openai_embeddings)
         
         initialized = key_handler.initialize_api_key(api_key, Grant_Guide_config.OPENAI_END_POINT)
 

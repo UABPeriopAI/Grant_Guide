@@ -50,12 +50,12 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
             "Enter your specific aims:",
             """Aim 1: Identify novel microRNAs differentially expressed in Alzheimer's patients compared to controls.
 
-Aim 2: Investigate the effects of identified microRNAs on neuronal cell viability and behavior in mouse models.
+            Aim 2: Investigate the effects of identified microRNAs on neuronal cell viability and behavior in mouse models.
 
-Aim 3: Determine the target genes and signaling pathways affected by these microRNAs.
+            Aim 3: Determine the target genes and signaling pathways affected by these microRNAs.
 
-Aim 4: Assess the therapeutic potential of modulating identified microRNAs in preclinical models.
-""",
+            Aim 4: Assess the therapeutic potential of modulating identified microRNAs in preclinical models.
+            """,
             height=300,
             key="aims_for_comparison",
         )
@@ -63,6 +63,7 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
         if st.button("Lookup and compare"):
             with st.spinner("Thinking..."):
                 submit_time = datetime.datetime.now()
+                print("Embedding Config", st.session_state.embedding_config)
                 documents = grant_generate.search_grant_guide_vectorstore(
                     query=aims, 
                     embeddings=st.session_state.embedding_config,
@@ -73,33 +74,33 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
                                                                  chat=st.session_state.chat_config)
                 response_time = datetime.datetime.now()
             st.markdown(result.content)
+            st.success("***NOTE*** The NIH has [expressed concern](https://grants.nih.gov/faqs#/use-of-generative-ai-in-peer-review.htm?anchor=56922) that \
+                generative AI increases the likelihood of academic misconduct. The checklist below is meant to help you address these concerns. \
+                _You_ are ultimately responsible for the content of the final document. Always use your best judgment.")
+            # try:
+            #     with get_db_connection(
+            #         db_server=grant_helper_app_config.DB_SERVER,
+            #         db_name=grant_helper_app_config.DB_NAME,
+            #         db_user=grant_helper_app_config.DB_USER,
+            #         db_password=grant_helper_app_config.DB_PASSWORD,
+            #     ) as conn:
+            #         # tempting to move this into llm_utils, but the query will be unique to each app.
+            #         cursor = conn.cursor()
+            #         query = """
+            #         INSERT INTO [dbo].[grant_comparison] (
+            #             specific_aims, 
+            #             comparison, 
+            #             input_time, 
+            #             response_time
+            #         ) VALUES (?, ?, ?, ?)
+            #         """
 
-            try:
-                with get_db_connection(
-                    db_server=grant_helper_app_config.DB_SERVER,
-                    db_name=grant_helper_app_config.DB_NAME,
-                    db_user=grant_helper_app_config.DB_USER,
-                    db_password=grant_helper_app_config.DB_PASSWORD,
-                ) as conn:
-                    # tempting to move this into llm_utils, but the query will be unique to each app.
-                    cursor = conn.cursor()
-                    query = """
-                    INSERT INTO [dbo].[grant_comparison] (
-                        specific_aims, 
-                        comparison, 
-                        input_time, 
-                        response_time
-                    ) VALUES (?, ?, ?, ?)
-                    """
+            #         cursor.execute(query, (aims, result.content, submit_time, response_time))
 
-                    cursor.execute(query, (aims, result.content, submit_time, response_time))
-
-                    st.success(
-                        "To comply with a Health System Information Security request, submissions are recorded for potential review."
-                    )
-            except Exception as e:
-                st.error("Something went wrong, you may have not yet setup a database for logging yet")
-                st.error(e)
+            #         
+            # except Exception as e:
+            #     st.error("Something went wrong, you may have not yet setup a database for logging yet")
+            #     st.error(e)
 
     with tab2:
         st.write(
@@ -109,11 +110,11 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
             "Enter your specific aims:",
             """Aim 1: Identify novel microRNAs differentially expressed in Alzheimer's patients compared to controls.
 
-Aim 2: Investigate the effects of identified microRNAs on neuronal cell viability and behavior in mouse models.
+            Aim 2: Investigate the effects of identified microRNAs on neuronal cell viability and behavior in mouse models.
 
-Aim 3: Determine the target genes and signaling pathways affected by these microRNAs.
+            Aim 3: Determine the target genes and signaling pathways affected by these microRNAs.
 
-Aim 4: Assess the therapeutic potential of modulating identified microRNAs in preclinical models.""",
+            Aim 4: Assess the therapeutic potential of modulating identified microRNAs in preclinical models.""",
             height=300,
             key="aims_for_page",
         )
@@ -147,35 +148,10 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
                     file_name="DRAFT_specific_aims_page.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",  # correct MIME type for docx
                 )
+            st.success("***NOTE*** The NIH has [expressed concern](https://grants.nih.gov/faqs#/use-of-generative-ai-in-peer-review.htm?anchor=56922) that \
+                generative AI increases the likelihood of academic misconduct. The checklist below is meant to help you address these concerns. \
+                _You_ are ultimately responsible for the content of the final document. Always use your best judgment.")
 
-            try:
-                with get_db_connection(
-                    db_server=grant_helper_app_config.DB_SERVER,
-                    db_name=grant_helper_app_config.DB_NAME,
-                    db_user=grant_helper_app_config.DB_USER,
-                    db_password=grant_helper_app_config.DB_PASSWORD,
-                ) as conn:
-                    # tempting to move this into llm_utils, but the query will be unique to each app.
-                    cursor = conn.cursor()
-                    query = """
-                    INSERT INTO [dbo].[aims_helper] (
-                        specific_aims, 
-                        aims_page, 
-                        input_time, 
-                        response_time
-                    ) VALUES (?, ?, ?, ?)
-                    """
-
-                    cursor.execute(
-                        query, (aims, summary_result.content, submit_time, response_time)
-                    )
-
-                    st.success(
-                        "To comply with a Health System Information Security request, submissions are recorded for potential review."
-                    )
-            except Exception as e:
-                st.error("Something went wrong, if the problem persists contact the developers")
-                st.error(e)
 
     with tab3:
 
@@ -222,36 +198,10 @@ Aim 4: Assess the therapeutic potential of modulating identified microRNAs in pr
                     file_name=f"DRAFT_{research_strategy_part}.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",  # correct MIME type for docx
                 )
-
-            try:
-                with get_db_connection(
-                    db_server=grant_helper_app_config.DB_SERVER,
-                    db_name=grant_helper_app_config.DB_NAME,
-                    db_user=grant_helper_app_config.DB_USER,
-                    db_password=grant_helper_app_config.DB_PASSWORD,
-                ) as conn:
-                    # tempting to move this into llm_utils, but the query will be unique to each app.
-                    cursor = conn.cursor()
-                    query = """
-                    INSERT INTO [dbo].[strategy_helper] (
-                        bullet_points, 
-                        strategy_section, 
-                        input_time, 
-                        response_time
-                    ) VALUES (?, ?, ?, ?)
-                    """
-
-                    cursor.execute(
-                        query,
-                        (strategy_bullets, strategy_result.content, submit_time, response_time),
-                    )
-
-                    st.success(
-                        "To comply with a Health System Information Security request, submissions are recorded for potential review."
-                    )
-            except Exception as e:
-                st.error("Something went wrong, if the problem persists contact the developers")
-                st.error(e)
+            st.success("***NOTE*** The NIH has [expressed concern](https://grants.nih.gov/faqs#/use-of-generative-ai-in-peer-review.htm?anchor=56922) that \
+                generative AI increases the likelihood of academic misconduct. The checklist below is meant to help you address these concerns. \
+                _You_ are ultimately responsible for the content of the final document. Always use your best judgment.")
+            
 
 
 if __name__ == "__main__":

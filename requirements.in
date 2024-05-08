@@ -1,8 +1,10 @@
 streamlit
-typer==0.6.1
+typer
 llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
 openai
 langchain
+langchain-community
+langchain-openai
 tiktoken
 faiss-cpu
 st_pages

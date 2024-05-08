@@ -137,8 +137,8 @@ def scrape_nih_reporter(fiscals_years=5, departments=grant_helper_config.DEPARTM
 
 
 def ingest_grant_csv(
+    embeddings,
     path=grant_helper_config.GRANT_CSV,
-    embeddings=grant_helper_config.EMBEDDINGS,
     out=grant_helper_config.GRANT_VECTORSTORE,
 ):
     """
