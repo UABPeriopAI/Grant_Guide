@@ -1,5 +1,4 @@
-from langchain.vectorstores import FAISS
-
+from langchain_community.vectorstores import FAISS
 import Grant_Guide.prompts as grant_guide_prompts
 import Grant_Guide_config.config as grant_helper_config
 

@@ -104,7 +104,7 @@ langchain-openai==0.1.6
     # via -r requirements.in
 langchain-text-splitters==0.0.1
     # via langchain
-langsmith==0.1.54
+langsmith==0.1.55
     # via
     #   langchain
     #   langchain-community

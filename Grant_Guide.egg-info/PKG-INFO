@@ -41,7 +41,7 @@ Requires-Dist: langchain-community==0.0.37
 Requires-Dist: langchain-core==0.1.52
 Requires-Dist: langchain-openai==0.1.6
 Requires-Dist: langchain-text-splitters==0.0.1
-Requires-Dist: langsmith==0.1.54
+Requires-Dist: langsmith==0.1.55
 Requires-Dist: llm-utils@ git+https://github.com/UABPeriopAI/llm_utils.git@main
 Requires-Dist: markdown-it-py==3.0.0
 Requires-Dist: markupsafe==2.1.5

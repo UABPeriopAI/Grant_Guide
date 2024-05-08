@@ -32,7 +32,7 @@ langchain-community==0.0.37
 langchain-core==0.1.52
 langchain-openai==0.1.6
 langchain-text-splitters==0.0.1
-langsmith==0.1.54
+langsmith==0.1.55
 llm-utils@ git+https://github.com/UABPeriopAI/llm_utils.git@main
 markdown-it-py==3.0.0
 markupsafe==2.1.5

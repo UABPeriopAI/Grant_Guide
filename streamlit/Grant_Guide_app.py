@@ -6,7 +6,7 @@ from llm_utils.database import get_db_connection
 from llm_utils.streamlit_common import apply_uab_font, hide_streamlit_branding
 
 import Grant_Guide.generate as grant_generate
-import Grant_Guide_config.app_config as grant_helper_app_config
+import Grant_Guide_config.api_config as grant_helper_app_config
 import Grant_Guide_config.boilerplate as Grant_boilerplate
 import Grant_Guide_config.config as Grant_Guide_config
 import streamlit as st
@@ -77,30 +77,6 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
             st.success("***NOTE*** The NIH has [expressed concern](https://grants.nih.gov/faqs#/use-of-generative-ai-in-peer-review.htm?anchor=56922) that \
                 generative AI increases the likelihood of academic misconduct. The checklist below is meant to help you address these concerns. \
                 _You_ are ultimately responsible for the content of the final document. Always use your best judgment.")
-            # try:
-            #     with get_db_connection(
-            #         db_server=grant_helper_app_config.DB_SERVER,
-            #         db_name=grant_helper_app_config.DB_NAME,
-            #         db_user=grant_helper_app_config.DB_USER,
-            #         db_password=grant_helper_app_config.DB_PASSWORD,
-            #     ) as conn:
-            #         # tempting to move this into llm_utils, but the query will be unique to each app.
-            #         cursor = conn.cursor()
-            #         query = """
-            #         INSERT INTO [dbo].[grant_comparison] (
-            #             specific_aims, 
-            #             comparison, 
-            #             input_time, 
-            #             response_time
-            #         ) VALUES (?, ?, ?, ?)
-            #         """
-
-            #         cursor.execute(query, (aims, result.content, submit_time, response_time))
-
-            #         
-            # except Exception as e:
-            #     st.error("Something went wrong, you may have not yet setup a database for logging yet")
-            #     st.error(e)
 
     with tab2:
         st.write(

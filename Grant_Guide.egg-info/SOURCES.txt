@@ -5,8 +5,8 @@ setup.py
 Grant_Guide/__init__.py
 Grant_Guide/data.py
 Grant_Guide/generate.py
-Grant_Guide/main.py
 Grant_Guide/prompts.py
+Grant_Guide/vector_databases.py
 Grant_Guide.egg-info/PKG-INFO
 Grant_Guide.egg-info/SOURCES.txt
 Grant_Guide.egg-info/dependency_links.txt

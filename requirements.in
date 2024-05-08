@@ -9,3 +9,4 @@ tiktoken
 faiss-cpu
 st_pages
 pypandoc
+getpass
