@@ -1,14 +1,6 @@
 # config.py
 from pathlib import Path
 
-from langchain.chat_models import ChatOpenAI
-from langchain_openai import AzureOpenAIEmbeddings
-from langchain_openai import AzureChatOpenAI
-from langchain_openai import OpenAIEmbeddings
-#from langchain_openai import AzureOpenAIEmbeddings
-
-import Grant_Guide_config.api_config as grant_app_config
-
 # Development Directories
 BASE_DIR = Path(__file__).parent.parent.absolute()
 CONFIG_DIR = Path(BASE_DIR, "config")
@@ -35,4 +27,32 @@ FIELD_LENGTH_LIMITS = {
     "phr_text": 5000,
 }
 
+DEPARTMENTS = [
+    "Anesthesiology",
+    "Microbiology/Immun/Virology",
+    "Neurosciences",
+    "Dentistry",
+    "Radiology",
+    "Physiology",
+    "Surgery",
+]
 
+
+CSV_CONFIG = {
+    "filename": Path(GRANT_CSV),
+    "headers": [
+        "Contact PI",
+        "Organization Name",
+        "Project Title",
+        "Project Abstract",
+        "Public Health Relevance Statement",
+    ],
+}
+
+#NIH Interface configuration
+REQUEST_CONFIG = {
+    "url": "https://api.reporter.nih.gov/v2/projects/search",
+    "headers": {"accept": "application/json", "Content-Type": "application/json"},
+}
+
+REQUEST_TIMEOUT = 5

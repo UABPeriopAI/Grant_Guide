@@ -135,13 +135,13 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
 
         research_strategy_part = st.selectbox(
             "Which part of the Research Strategy do you need help with?",
-            list(Grant_Guide_config.prefilled_text.keys()),
+            list(Grant_boilerplate.prefilled_text.keys()),
         )
 
         # Display a text area with prefilled text based on the user's selection
         strategy_bullets = st.text_area(
             "Please address the following and replace the text in the box. **We suggest copying the instructions into a Word Doc and pasting your response when done.**",
-            value=Grant_Guide_config.prefilled_text[research_strategy_part],
+            value=Grant_boilerplate.prefilled_text[research_strategy_part],
             height=650,
         )
 
@@ -151,7 +151,7 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
                 strategy_result = grant_generate.get_strategy_response(
                     bullet_points=strategy_bullets,
                     rs_part=research_strategy_part,
-                    instructions=Grant_Guide_config.prefilled_text[research_strategy_part],
+                    instructions=Grant_boilerplate.prefilled_text[research_strategy_part],
                     chat = st.session_state.chat_config
                 )
                 response_time = datetime.datetime.now()

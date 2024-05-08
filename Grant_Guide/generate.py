@@ -1,12 +1,12 @@
 from langchain_community.vectorstores import FAISS
 import Grant_Guide.prompts as grant_guide_prompts
-import Grant_Guide_config.config as grant_helper_config
+import Grant_Guide_config.config as grant_guide_config
 
 
 def search_grant_guide_vectorstore(
     query: str,
     embeddings=None,
-    store=grant_helper_config.GRANT_VECTORSTORE,
+    store=grant_guide_config.GRANT_VECTORSTORE,
 ):
     """
     This function searches for relevant documents in a vectorstore using a query.
