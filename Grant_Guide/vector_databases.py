@@ -2,15 +2,13 @@ import warnings
 import os
 import typer
 from enum import Enum
-import getpass
+from getpass4 import getpass
 
 from Grant_Guide.nih_interface import scrape_nih_reporter
 from Grant_Guide.ingest_grant_csv import create_vectorstore_from_csv
 import Grant_Guide.generate as grant_generate
 import Grant_Guide.prompts as grant_guide_prompts
 import Grant_Guide_config.config as grant_guide_config
-
-from llm_utils.login import AzureKeyHandler, OpenaiKeyHandler
 
 class APIConfig(str, Enum):
     azure = "azure"

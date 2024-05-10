@@ -1,6 +1,6 @@
 streamlit
 typer
-llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
+llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@v0.1
 openai
 langchain
 langchain-community
@@ -9,4 +9,4 @@ tiktoken
 faiss-cpu
 st_pages
 pypandoc
-getpass
+getpass4
