@@ -12,10 +12,11 @@
 			"NODE_VERSION": "none"
 		}
 	},
-	//TODO - Update source location for your project and uncomment mounts
-	// "mounts": [
-	// 	"source=./data,target=/data,type=bind,consistency=cached"
-	//   ],
+	//TODO - Update source location for your project and relocate mounts
+	// if you'd like to move embeddings out of the code repository (recommended)
+	"mounts": [
+		"source=./data,target=/data,type=bind,consistency=cached"
+	  ],
 
 
 	// Set *default* container specific settings.json values on container create.

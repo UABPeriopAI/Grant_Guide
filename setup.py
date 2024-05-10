@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).parent
 with open(Path(BASE_DIR, "requirements.txt")) as file:
     required_packages = [ln.strip() for ln in file.readlines()]
 
-docs_packages = ["mkdocs==1.3.1", "mkdocstrings==0.18.1"]
+docs_packages = ["mkdocs", "mkdocstrings"]
 
-style_packages = ["black==22.6.0", "flake8==5.0.2", "isort==5.10.1"]
+style_packages = ["black", "flake8", "isort"]
 
 # Define our package
 setup(

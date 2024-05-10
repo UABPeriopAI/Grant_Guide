@@ -1,13 +1,12 @@
-from langchain.vectorstores import FAISS
-
+from langchain_community.vectorstores import FAISS
 import Grant_Guide.prompts as grant_guide_prompts
-import Grant_Guide_config.config as grant_helper_config
+import Grant_Guide_config.config as grant_guide_config
 
 
 def search_grant_guide_vectorstore(
     query: str,
-    embeddings=grant_helper_config.EMBEDDINGS,
-    store=grant_helper_config.GRANT_VECTORSTORE,
+    embeddings=None,
+    store=grant_guide_config.GRANT_VECTORSTORE,
 ):
     """
     This function searches for relevant documents in a vectorstore using a query.
@@ -25,7 +24,7 @@ def search_grant_guide_vectorstore(
     specified in the configuration.
     """
     # Load vectorstore
-    vectordb = FAISS.load_local(store, embeddings)
+    vectordb = FAISS.load_local(store, embeddings, allow_dangerous_deserialization=True)
     docsearch = vectordb.as_retriever()
     docs = docsearch.get_relevant_documents(query)
     return docs
@@ -34,7 +33,7 @@ def search_grant_guide_vectorstore(
 def get_grant_guide_response(
     query: str,
     docs,
-    chat=grant_helper_config.CHAT,
+    chat=None,
     chat_prompt=grant_guide_prompts.grant_guide_chat_prompt,
 ):
     """
@@ -62,7 +61,9 @@ def get_grant_guide_response(
 
 
 def get_aims_response(
-    aims: str, chat=grant_helper_config.CHAT, chat_prompt=grant_guide_prompts.aims_chat_prompt
+    aims: str, 
+    chat=None, 
+    chat_prompt=grant_guide_prompts.aims_chat_prompt
 ):
     """
     The function `get_aims_response` takes an aims string as input and uses a chat function to generate
@@ -88,7 +89,7 @@ def get_strategy_response(
     bullet_points: str,
     rs_part: str,
     instructions: str,
-    chat=grant_helper_config.CHAT,
+    chat=None,
     chat_prompt=grant_guide_prompts.strategy_chat_prompt,
 ):
     """
@@ -117,7 +118,7 @@ def get_strategy_response(
 
 def get_summary_response(
     aims_page: str,
-    chat=grant_helper_config.CHAT,
+    chat=None,
     chat_prompt=grant_guide_prompts.summary_chat_prompt,
 ):
 

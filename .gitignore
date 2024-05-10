@@ -3,9 +3,11 @@
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
+Grant_Guide/__pycache__/*
+Grant_Guide_config/__pycache__/*
 *.py[cod]
 *$py.class
+
 
 # C extensions
 *.so
