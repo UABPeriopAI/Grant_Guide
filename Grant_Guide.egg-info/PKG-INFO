@@ -16,14 +16,18 @@ Requires-Dist: async-timeout==4.0.3
 Requires-Dist: attrs==23.2.0
 Requires-Dist: blinker==1.8.2
 Requires-Dist: cachetools==5.3.3
+Requires-Dist: caugetch==0.0.1
 Requires-Dist: certifi==2024.2.2
 Requires-Dist: charset-normalizer==3.3.2
 Requires-Dist: click==8.1.7
-Requires-Dist: dataclasses-json==0.6.5
+Requires-Dist: clipboard==0.0.4
+Requires-Dist: colorama==0.4.6
+Requires-Dist: dataclasses-json==0.6.6
 Requires-Dist: distro==1.9.0
 Requires-Dist: exceptiongroup==1.2.1
 Requires-Dist: faiss-cpu==1.8.0
 Requires-Dist: frozenlist==1.4.1
+Requires-Dist: getpass4==0.0.14.1
 Requires-Dist: gitdb==4.0.11
 Requires-Dist: gitpython==3.1.43
 Requires-Dist: greenlet==3.0.3
@@ -36,13 +40,13 @@ Requires-Dist: jsonpatch==1.33
 Requires-Dist: jsonpointer==2.4
 Requires-Dist: jsonschema==4.22.0
 Requires-Dist: jsonschema-specifications==2023.12.1
-Requires-Dist: langchain==0.1.17
-Requires-Dist: langchain-community==0.0.37
+Requires-Dist: langchain==0.1.19
+Requires-Dist: langchain-community==0.0.38
 Requires-Dist: langchain-core==0.1.52
 Requires-Dist: langchain-openai==0.1.6
 Requires-Dist: langchain-text-splitters==0.0.1
-Requires-Dist: langsmith==0.1.55
-Requires-Dist: llm-utils@ git+https://github.com/UABPeriopAI/llm_utils.git@main
+Requires-Dist: langsmith==0.1.56
+Requires-Dist: llm-utils@ git+https://github.com/UABPeriopAI/llm_utils.git@v0.2
 Requires-Dist: markdown-it-py==3.0.0
 Requires-Dist: markupsafe==2.1.5
 Requires-Dist: marshmallow==3.21.2
@@ -50,7 +54,7 @@ Requires-Dist: mdurl==0.1.2
 Requires-Dist: multidict==6.0.5
 Requires-Dist: mypy-extensions==1.0.0
 Requires-Dist: numpy==1.26.4
-Requires-Dist: openai==1.26.0
+Requires-Dist: openai==1.28.0
 Requires-Dist: orjson==3.10.3
 Requires-Dist: packaging==23.2
 Requires-Dist: pandas==2.2.2
@@ -59,15 +63,16 @@ Requires-Dist: protobuf==4.25.3
 Requires-Dist: pyarrow==16.0.0
 Requires-Dist: pydantic==2.7.1
 Requires-Dist: pydantic-core==2.18.2
-Requires-Dist: pydeck==0.9.0
+Requires-Dist: pydeck==0.9.1
 Requires-Dist: pygments==2.18.0
 Requires-Dist: pyodbc==5.1.0
 Requires-Dist: pypandoc==1.13
+Requires-Dist: pyperclip==1.8.2
 Requires-Dist: python-dateutil==2.9.0.post0
 Requires-Dist: pytz==2024.1
 Requires-Dist: pyyaml==6.0.1
 Requires-Dist: referencing==0.35.1
-Requires-Dist: regex==2024.4.28
+Requires-Dist: regex==2024.5.10
 Requires-Dist: requests==2.31.0
 Requires-Dist: rich==13.7.1
 Requires-Dist: rpds-py==0.18.1

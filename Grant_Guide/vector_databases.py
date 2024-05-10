@@ -36,7 +36,7 @@ def ingest_grant_csv(
     The `ingest` function preprocesses data
     """
     if "OPENAI_API_KEY" not in os.environ:
-        os.environ["OPENAI_API_KEY"] = getpass.getpass(prompt="API Key:")
+        os.environ["OPENAI_API_KEY"] = getpass(prompt="API Key:")
 
     import Grant_Guide_config.api_config as api_config
     
@@ -66,7 +66,7 @@ def generate_grant_guide(
     """
 
     if "OPENAI_API_KEY" not in os.environ:
-        os.environ["OPENAI_API_KEY"] = getpass.getpass(prompt="API Key:")
+        os.environ["OPENAI_API_KEY"] = getpass(prompt="API Key:")
 
     import Grant_Guide_config.api_config as api_config
 

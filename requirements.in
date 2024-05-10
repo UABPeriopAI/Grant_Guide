@@ -1,6 +1,6 @@
 streamlit
 typer
-llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@v0.1
+llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@v0.2
 openai
 langchain
 langchain-community
