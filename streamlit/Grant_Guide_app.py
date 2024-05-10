@@ -2,16 +2,14 @@
 import datetime
 
 from llm_utils import text_format
-from llm_utils.database import get_db_connection
 from llm_utils.streamlit_common import apply_uab_font, hide_streamlit_branding
 
 import Grant_Guide.generate as grant_generate
-import Grant_Guide_config.api_config as grant_helper_app_config
-import Grant_Guide_config.boilerplate as Grant_boilerplate
-import Grant_Guide_config.config as Grant_Guide_config
+import Grant_Guide_config.boilerplate as grant_boilderplate
+import Grant_Guide_config.config as grant_guide_config
 import streamlit as st
 
-def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
+def show_grant_guide_page(vectorstore=grant_guide_config.GRANT_VECTORSTORE):
     # page metadata
     st.set_page_config(
         page_title="Grant Guide",
@@ -44,7 +42,7 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
     with tab1:
         st.write(
             "Perform and AI-assisted search of the last 5 fiscal years' funded NIH grants and compare them to your idea. This search is limited to the following [NIH-RePORTER](https://reporter.nih.gov/advanced-search) departments: "
-            + ", ".join(Grant_Guide_config.DEPARTMENTS)
+            + ", ".join(grant_guide_config.DEPARTMENTS)
         )
         aims = st.text_area(
             "Enter your specific aims:",
@@ -104,7 +102,7 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
                                                                      chat=st.session_state.chat_config)
 
                 output_text = (
-                    Grant_boilerplate.CONTRACT
+                    grant_boilderplate.CONTRACT
                     + "# AI-generated text \n\n"
                     + "## Specific Aims Page \n\n"
                     + aims_result.content
@@ -135,13 +133,13 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
 
         research_strategy_part = st.selectbox(
             "Which part of the Research Strategy do you need help with?",
-            list(Grant_boilerplate.prefilled_text.keys()),
+            list(grant_boilderplate.prefilled_text.keys()),
         )
 
         # Display a text area with prefilled text based on the user's selection
         strategy_bullets = st.text_area(
             "Please address the following and replace the text in the box. **We suggest copying the instructions into a Word Doc and pasting your response when done.**",
-            value=Grant_boilerplate.prefilled_text[research_strategy_part],
+            value=grant_boilderplate.prefilled_text[research_strategy_part],
             height=650,
         )
 
@@ -151,13 +149,13 @@ def show_grant_guide_page(vectorstore=Grant_Guide_config.GRANT_VECTORSTORE):
                 strategy_result = grant_generate.get_strategy_response(
                     bullet_points=strategy_bullets,
                     rs_part=research_strategy_part,
-                    instructions=Grant_boilerplate.prefilled_text[research_strategy_part],
+                    instructions=grant_boilderplate.prefilled_text[research_strategy_part],
                     chat = st.session_state.chat_config
                 )
                 response_time = datetime.datetime.now()
 
                 output_text = (
-                    Grant_boilerplate.CONTRACT
+                    grant_boilderplate.CONTRACT
                     + "# AI-generated text \n\n"
                     + strategy_result.content
                 )

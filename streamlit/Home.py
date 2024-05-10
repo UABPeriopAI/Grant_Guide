@@ -18,20 +18,20 @@ def log_in():
     api_key = st.session_state["api_key"]
     os.environ["OPENAI_API_KEY"] = api_key
 
-    import Grant_Guide_config.config as Grant_Guide_config
+    import Grant_Guide_config.api_config as api_config
 
 
     if api_key_type == "Azure":
-        key_handler = AzureKeyHandler(Grant_Guide_config.azure_chat_config, 
-                                        embedding_config = Grant_Guide_config.azure_embeddings)
+        key_handler = AzureKeyHandler(api_config.azure_chat_config, 
+                                        embedding_config = api_config.azure_embeddings)
         
-        initialized = key_handler.initialize_api_key(api_key, Grant_Guide_config.AZURE_END_POINT)
+        initialized = key_handler.initialize_api_key(api_key, api_config.AZURE_END_POINT)
 
     elif api_key_type == "OpenAI":
-        key_handler = OpenaiKeyHandler(Grant_Guide_config.openai_chat_config, 
-                                        embedding_config = Grant_Guide_config.openai_embeddings)
+        key_handler = OpenaiKeyHandler(api_config.openai_chat_config, 
+                                        embedding_config = api_config.openai_embeddings)
         
-        initialized = key_handler.initialize_api_key(api_key, Grant_Guide_config.OPENAI_END_POINT)
+        initialized = key_handler.initialize_api_key(api_key, api_config.OPENAI_END_POINT)
 
     else:
         st.error("Select the API key type.")
