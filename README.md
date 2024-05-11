@@ -65,7 +65,9 @@ Run the application with the following command:
 streamlit run streamlit/Home.py
 ```
 Occasionally, the webpage will stall and require a refresh to fully deploy.  Once it deploys, the user will be asked to select an API key type (either Azure or OpenAI) and then need to enter their corresponding key in the text box below, as show in the figure.
+
 <img width="538" alt="image" src="https://github.com/UABPeriopAI/Grant_Guide/assets/97175225/d6c9bf45-b797-477f-a188-66d3182534ff">
+
 After the API key is validated the primary user interface will be available.
 
 
