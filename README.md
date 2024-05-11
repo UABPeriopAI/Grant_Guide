@@ -68,8 +68,11 @@ Occasionally, the webpage will stall and require a refresh to fully deploy.  Onc
 
 <img width="538" alt="image" src="https://github.com/UABPeriopAI/Grant_Guide/assets/97175225/d6c9bf45-b797-477f-a188-66d3182534ff">
 
-After the API key is validated the primary user interface will be available.
+After the API key is validated the primary user interface is available by selecting Grant Guide from the tab on the left sidebar.  The user should then see an interface resembling the image below:
 
+<img width="951" alt="image" src="https://github.com/UABPeriopAI/Grant_Guide/assets/97175225/abc2f5ca-6121-4d25-95d7-c38f1bdb66fc">
+
+The user can then use the search and compare tool, specific aims drafter, or research strategy drafter by selecting the corresponding tab on the user interface.
 
 #### TODO
 - [ ] specify a data folder location in `.devcontainer/devcontainer.json`
