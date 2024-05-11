@@ -52,27 +52,26 @@ code .
    + in VS Code press f1 and type "Rebuild"  a drop down menu will provide options and select "Dev Containers: Rebuild Container"
    + You may have to start the docker service with ```sudo service docker start```
 
-6. Prior to running the streamlit application the user might want to create a VectorStore for their LLM to reference.  This can be done 
+6. Prior to running the streamlit application the user might want to extract data from NIH RePORTER and create a VectorStore for their LLM to reference. The details of what is pulled from NIH RePORTER can be adjusted in Grant_Guide_config/config.py (including, DEPARTMENTS and CSV_CONFIG.)  To create a CSV based on the contents returned by NIH RePORTER enter the following command into the terminal of VSCode ```python Grant_Guide/vector_databases.py get-grant-csv```.  There will likely be some LangChain warnings that can be disregarded. 
    
-7. At this point you can run the application as described in the next section, "Running the Application"  However, to use the generative AI functionality, you will have to add your own LLM enpoint and setup a secrets file as describe in steps 7 and 8.  A bring your own key version will be available in the next release.
+7. Now, to create the vector store from the CSV, run the following command: ```python Grant_Guide/vector_databases.py ingest-grant-csv```. This will require selecting a LLM source (either azure (default) or openai, to be set via the --api setting, for example, ```python Grant_Guide/vector_databases.py ingest-grant-csv --api openai```) API key for either Azure or OpenAI to run. Upon running, the user will be prompted for their API key.  Creation of the vectorstore will take some, be patient.
 
-8. Connect your LLM endpoint 
-  + Upon deploying the streamlit application, the application will prompt the user to add in their own OpenAI or Azure API Key.  Select the corresponding endpoint from the drop down menu (OpenAI or Azure) and paste the API in the field below.
-  + Note: More advanced changes can be made in the config file (Grant_Guide_config/config.py)
-
+8. The web application is now ready to run. 
 
 ## Running the Application 
 ### Directly from source code
 Run the application with the following command:
 ```
-streamlit run streamlit/Grant_Guide_app.py
+streamlit run streamlit/Home.py
 ```
+Occasionally, the webpage will stall and require a refresh to fully deploy.  Once it deploys, the user will be asked to select an API key type (either Azure or OpenAI) and then need to enter their corresponding key in the text box below, as show in the figure.
+<img width="538" alt="image" src="https://github.com/UABPeriopAI/Grant_Guide/assets/97175225/d6c9bf45-b797-477f-a188-66d3182534ff">
+After the API key is validated the primary user interface will be available.
 
-In this case, use `.streamlit/secrets.toml` for secrets
 
 #### TODO
 - [ ] specify a data folder location in `.devcontainer/devcontainer.json`
-- [ ] add LLM end-point (e.g., ChatGPT API), including necessary API Key (config.py)
+- [ ] Obtain LLM end-point (i.e., OpenAI or Azure), including necessary API Key.
 
 ## Contributing
 
