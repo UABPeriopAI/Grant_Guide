@@ -72,7 +72,7 @@ After the API key is validated the primary user interface is available by select
 
 <img width="951" alt="image" src="https://github.com/UABPeriopAI/Grant_Guide/assets/97175225/abc2f5ca-6121-4d25-95d7-c38f1bdb66fc">
 
-The user can then use the search and compare tool, specific aims drafter, or research strategy drafter by selecting the corresponding tab on the user interface.
+The user can then use the search and compare, specific aims, or research strategy functionalities by selecting the corresponding tab on the user interface.
 
 #### TODO
 - [ ] specify a data folder location in `.devcontainer/devcontainer.json`
