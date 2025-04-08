@@ -59,6 +59,7 @@ code .
 8. The web application is now ready to run. 
 
 ## Running the Application 
+Code documentation is available [here](https://uabperiopai.github.io/Grant_Guide/).
 ### Directly from source code
 Run the application with the following command:
 ```
