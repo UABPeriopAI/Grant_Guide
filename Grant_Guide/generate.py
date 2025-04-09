@@ -34,7 +34,8 @@ def get_grant_guide_response(
     query: str,
     docs,
     chat=None,
-    chat_prompt=grant_guide_prompts.grant_guide_chat_prompt,
+    # chat_prompt=grant_guide_prompts.grant_guide_chat_prompt, # Ignores the aims in the app
+    chat_prompt=grant_guide_prompts.aims_chat_prompt, # Uses the aims in the app
 ):
     """
     This function takes a query and a list of documents, prompts the user for a response using a
